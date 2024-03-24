@@ -1,0 +1,22 @@
+<button
+  type="button"
+  class="inline-flex items-center bg-transparent font-medium text-white"
+  [ngClass]="buttonClasses">
+  @if (onlyIcon) {
+    <app-icon [icon]="onlyIcon" [size]="size" />
+  } @else {
+    @if (leadingIcon) {
+      <app-icon
+        [icon]="leadingIcon"
+        [size]="size"
+        [class]="leadingIconClasses" />
+    }
+    <ng-content />
+    @if (trailingIcon) {
+      <app-icon
+        [icon]="trailingIcon"
+        [size]="size"
+        [class]="trailingIconClasses" />
+    }
+  }
+</button>

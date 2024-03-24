@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --r-radius-small: 8px;
+    --r-radius-medium: 12px;
+    --r-radius-large: 14px;
+    --r-disabled-opacity: 0.5;
+  }
+  body {
+    @apply bg-zinc-950;
+  }
+}

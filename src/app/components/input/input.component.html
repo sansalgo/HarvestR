@@ -1,0 +1,47 @@
+<div>
+  <div [ngClass]="inputGroupClasses">
+    @if (leadingAddOn) {
+      <span
+        class="inline-flex items-center rounded-l-md border-2 border-r-0 border-zinc-800 bg-transparent px-3 text-white sm:text-sm"
+        >{{ leadingAddOn }}</span
+      >
+    }
+    @if (leadingIcon || leadingInlineAddOn) {
+      <div
+        class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+        @if (leadingIcon) {
+          <app-icon icon="envelope" size="xl" />
+        }
+        @if (leadingInlineAddOn) {
+          <span class="text-gray-500 sm:text-sm">{{ leadingInlineAddOn }}</span>
+        }
+      </div>
+    }
+    <input
+      type="text"
+      name="company-website"
+      id="company-website"
+      class="block w-full min-w-0 flex-1 border-2 border-zinc-800 bg-transparent px-3 py-2 text-white outline-none sm:text-sm"
+      placeholder="www.example.com"
+      [ngClass]="inputClasses" />
+    @if (trailingIcon || trailingInlineAddOn) {
+      <div
+        class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+        @if (trailingIcon) {
+          <app-icon icon="envelope" size="xl" />
+        }
+        @if (trailingInlineAddOn) {
+          <span class="text-gray-500 sm:text-sm" id="price-currency">{{
+            trailingInlineAddOn
+          }}</span>
+        }
+      </div>
+    }
+    @if (trailingAddOn) {
+      <span
+        class="inline-flex items-center rounded-r-md border-2 border-l-0 border-zinc-800 bg-transparent px-3 text-white sm:text-sm"
+        >{{ trailingAddOn }}</span
+      >
+    }
+  </div>
+</div>
