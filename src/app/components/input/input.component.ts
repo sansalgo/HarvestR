@@ -17,7 +17,10 @@ export class InputComponent {
   @Input() trailingAddOn?: string;
   @Input() leadingInlineAddOn?: string;
   @Input() trailingInlineAddOn?: string;
+  // TODO: add trailingButton
   @Input() trailingButton?: string;
+
+  // TODO: add padding based on leading and trailing content
 
   get inputClasses(): string[] {
     const classes = [];
