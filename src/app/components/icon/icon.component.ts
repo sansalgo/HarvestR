@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { IconName, Size } from '../../../types/app';
+import { IconName, Size } from '../../../types/components';
 
 const SIZE_CLASSES = {
   xs: ['h-4', 'w-4'],

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IconName } from '../../../types/app';
+import { IconName } from '../../../types/components';
 import { IconComponent } from '../icon/icon.component';
 import { CommonModule } from '@angular/common';
 

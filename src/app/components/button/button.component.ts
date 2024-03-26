@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, booleanAttribute } from '@angular/core';
-import { IconName, Size } from '../../../types/app';
+import { IconName, Size } from '../../../types/components';
 import { IconComponent } from '../icon/icon.component';
 
 const SIZE_CLASSES = {

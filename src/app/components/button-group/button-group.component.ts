@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
-import { Size } from '../../../types/app';
+import { Size } from '../../../types/components';
 
 @Component({
   selector: 'app-button-group',

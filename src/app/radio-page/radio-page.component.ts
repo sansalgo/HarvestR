@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { RadioGroupComponent } from '../components/radio-group/radio-group.component';
 
 @Component({
   selector: 'app-radio-page',
   standalone: true,
-  imports: [],
+  imports: [RadioGroupComponent],
   templateUrl: './radio-page.component.html',
-  styleUrl: './radio-page.component.css'
+  styleUrl: './radio-page.component.css',
 })
-export class RadioPageComponent {
-
-}
+export class RadioPageComponent {}
