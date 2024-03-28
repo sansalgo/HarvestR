@@ -1,3 +1,7 @@
-<span class="inline-flex items-center font-medium" [ngClass]="badgeClasses">
+<span
+  aria-hidden="true"
+  class="inline-flex items-center border-2 font-medium"
+  [ngClass]="badgeClasses"
+  (click)="handleOnClick()">
   <ng-content></ng-content>
 </span>

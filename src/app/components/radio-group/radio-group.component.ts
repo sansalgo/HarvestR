@@ -21,4 +21,12 @@ export class RadioGroupComponent {
     { id: 7, label: 'title' },
     { id: 8, label: 'body' },
   ];
+
+  isChecked(value: string): boolean {
+    return value === this.checkedValue;
+  }
+
+  handleCheck(value: string) {
+    this.checkedValue = value;
+  }
 }

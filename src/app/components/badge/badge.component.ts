@@ -1,4 +1,10 @@
-import { Component, Input, booleanAttribute } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  booleanAttribute,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { convertToClasses } from '../../shared/class-helper';
 
@@ -17,6 +23,7 @@ const SIZE_CLASSES = {
 export class BadgeComponent {
   @Input() size: 'base' | 'lg' = 'base';
   @Input() class: string = '';
+  @Output() clickEvent = new EventEmitter<boolean>();
 
   @Input({ transform: booleanAttribute })
   get checked(): boolean {
@@ -32,9 +39,14 @@ export class BadgeComponent {
       this.class,
       SIZE_CLASSES[this.size],
       {
-        'bg-white text-black': this.checked,
-        'border-2 border-zinc-800': !this.checked,
+        'bg-white text-black border-white': this.checked,
+        'border-zinc-800': !this.checked,
+        'cursor-pointer': !!this.clickEvent.length,
       },
     ]);
+  }
+
+  handleOnClick() {
+    this.clickEvent.emit(this.checked);
   }
 }
