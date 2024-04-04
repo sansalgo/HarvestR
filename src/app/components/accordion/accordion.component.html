@@ -1,3 +1,42 @@
-<div>
-  <app-button outlined onlyIcon="chevron-right"></app-button>
+<div class="flex flex-col gap-y-3">
+  <div class="rounded-md border-2 border-zinc-800 p-1">
+    <!-- <div><app-input></app-input></div> -->
+    <div class="flex items-center justify-between">
+      <app-input></app-input>
+      <app-button
+        outlined
+        onlyIcon="chevron-right"
+        (clickEvent)="toggle(1)"></app-button>
+    </div>
+    @if (expandedIndex === 1) {
+      <div class="mt-1">
+        <app-input></app-input>
+        <app-input></app-input>
+        <app-input></app-input>
+        <app-input></app-input>
+        <app-input></app-input>
+        <app-input></app-input>
+      </div>
+    }
+  </div>
+  <div class="rounded-md border-2 border-zinc-800 p-1">
+    <!-- <div><app-input></app-input></div> -->
+    <div class="flex justify-between">
+      <app-input></app-input>
+      <app-button
+        outlined
+        onlyIcon="chevron-right"
+        (clickEvent)="toggle(2)"></app-button>
+    </div>
+    <div>
+      @if (expandedIndex === 2) {
+        <app-input></app-input>
+        <app-input></app-input>
+        <app-input></app-input>
+        <app-input></app-input>
+        <app-input></app-input>
+        <app-input></app-input>
+      }
+    </div>
+  </div>
 </div>

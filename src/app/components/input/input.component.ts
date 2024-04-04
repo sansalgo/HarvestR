@@ -51,9 +51,9 @@ export class InputComponent {
 
   get inputGroupClasses(): string[] {
     if (this.leadingAddOn || this.trailingAddOn) {
-      return ['mt-1', 'flex', 'rounded-md', 'shadow-sm'];
+      return ['flex', 'rounded-md', 'shadow-sm'];
     } else {
-      return ['relative', 'mt-1', 'rounded-md', 'text-white', 'shadow-sm'];
+      return ['relative', 'rounded-md', 'text-white', 'shadow-sm'];
     }
   }
 }

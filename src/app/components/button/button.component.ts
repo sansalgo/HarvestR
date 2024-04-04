@@ -1,22 +1,45 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, booleanAttribute } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  booleanAttribute,
+} from '@angular/core';
 import { IconName, Size } from '../../../types/components';
 import { IconComponent } from '../icon/icon.component';
+import { DividerComponent } from '../divider/divider.component';
 
-const SIZE_CLASSES = {
-  xs: ['rounded', 'px-2.5', 'py-1.5', 'text-xs'],
-  sm: ['rounded-md', 'px-3', 'py-2', 'text-sm', 'leading-4'],
-  base: ['rounded-md', 'px-4', 'py-2', 'text-sm'],
-  lg: ['rounded-md', 'px-4', 'py-2', 'text-base'],
-  xl: ['rounded-md', 'px-6', 'py-3', 'text-base'],
+const BASE_CLASSES = {
+  xs: ['rounded', 'text-xs'],
+  sm: ['rounded-md', 'text-sm', 'leading-4'],
+  base: ['rounded-md', 'text-sm'],
+  lg: ['rounded-md', 'text-base'],
+  xl: ['rounded-md', 'text-base'],
 };
 
-const ICON_POS_CLASSES = {
+const PADDING_CLASSES = {
+  xs: ['px-2.5', 'py-1.5'],
+  sm: ['px-3', 'py-2'],
+  base: ['px-4', 'py-2'],
+  lg: ['px-4', 'py-2'],
+  xl: ['px-6', 'py-3'],
+};
+
+const ICON_MARGIN_CLASSES = {
   xs: { leading: ['-ml-0.5', 'mr-2'], trailing: ['ml-2', '-mr-0.5'] },
   sm: { leading: ['-ml-0.5', 'mr-2'], trailing: ['ml-2', '-mr-0.5'] },
   base: { leading: ['-ml-1', ' mr-2'], trailing: ['ml-2 ', '-mr-1'] },
   lg: { leading: ['-ml-1 ', 'mr-3'], trailing: ['ml-3 ', '-mr-1'] },
   xl: { leading: ['-ml-1 ', 'mr-3'], trailing: ['ml-3 ', '-mr-1'] },
+};
+
+const ICON_PADDING_CLASSES = {
+  xs: ['p-1'],
+  sm: ['p-1.5'],
+  base: ['p-2'],
+  lg: ['p-2'],
+  xl: ['p-3'],
 };
 
 @Component({
@@ -31,6 +54,7 @@ export class ButtonComponent {
   @Input() leadingIcon?: IconName;
   @Input() trailingIcon?: IconName;
   @Input() onlyIcon?: IconName;
+  @Output() clickEvent = new EventEmitter<void>();
 
   @Input({ transform: booleanAttribute })
   get outlined(): boolean {
@@ -51,19 +75,28 @@ export class ButtonComponent {
   private _disabled: boolean = false;
 
   get buttonClasses(): string[] {
-    const classes = SIZE_CLASSES[this.size];
+    let classes = BASE_CLASSES[this.size];
     const outlineClasses = ['border-2', 'border-zinc-800'];
+    if (this.onlyIcon) {
+      classes = [...classes, ...ICON_PADDING_CLASSES[this.size]];
+    } else {
+      classes = [...classes, ...PADDING_CLASSES[this.size]];
+    }
     if (this.outlined) {
-      return [...classes, ...outlineClasses];
+      classes = [...classes, ...outlineClasses];
     }
     return classes;
   }
 
   get leadingIconClasses(): string {
-    return ICON_POS_CLASSES[this.size]['leading'].join(' ');
+    return ICON_MARGIN_CLASSES[this.size]['leading'].join(' ');
   }
 
   get trailingIconClasses(): string {
-    return ICON_POS_CLASSES[this.size]['trailing'].join(' ');
+    return ICON_MARGIN_CLASSES[this.size]['trailing'].join(' ');
+  }
+
+  handleOnClick(): void {
+    this.clickEvent.emit();
   }
 }
