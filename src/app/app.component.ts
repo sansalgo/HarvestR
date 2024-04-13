@@ -4,6 +4,7 @@ import { ButtonGroupComponent } from './components/button-group/button-group.com
 import { ButtonComponent } from './components/button/button.component';
 import { DisclosureComponent } from './components/disclosure/disclosure.component';
 import { InputComponent } from './components/input/input.component';
+import { AccordionModule } from './components/accordion/accordion.module';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { InputComponent } from './components/input/input.component';
     ButtonGroupComponent,
     DisclosureComponent,
     InputComponent,
+    AccordionModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

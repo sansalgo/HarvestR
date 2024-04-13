@@ -1,0 +1,15 @@
+<div class="rounded-md border-2 border-zinc-800 p-1">
+  <div class="flex items-center justify-between">
+    <ng-content select="app-accordion-header"></ng-content>
+    <app-button
+      outlined
+      [onlyIcon]="expandedIndex ? 'chevron-down' : 'chevron-right'"
+      (clickEvent)="toggle(1)"></app-button>
+  </div>
+
+  @if (expandedIndex === 1) {
+    <div class="mt-1">
+      <ng-content select="app-accordion-body"></ng-content>
+    </div>
+  }
+</div>

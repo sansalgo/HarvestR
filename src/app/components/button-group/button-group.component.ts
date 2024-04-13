@@ -2,6 +2,7 @@ import {
   AfterContentInit,
   Component,
   ContentChildren,
+  ElementRef,
   Input,
   QueryList,
 } from '@angular/core';
@@ -17,7 +18,8 @@ import { Size } from '../../../types/components';
   styleUrl: './button-group.component.css',
 })
 export class ButtonGroupComponent implements AfterContentInit {
-  @ContentChildren(ButtonComponent) buttons!: QueryList<ButtonComponent>;
+  @ContentChildren(ButtonComponent)
+  buttons!: QueryList<ButtonComponent>;
   @Input() size: Size = 'base';
 
   ngAfterContentInit(): void {
@@ -26,9 +28,12 @@ export class ButtonGroupComponent implements AfterContentInit {
 
   private applyPropertiesToButtons(): void {
     if (this.buttons && this.buttons.length > 1) {
+      let first = true;
       this.buttons.forEach(button => {
         button.size = this.size;
         button.outlined = false;
+        if (!first) button.divider = 'left';
+        first = false;
       });
     }
   }

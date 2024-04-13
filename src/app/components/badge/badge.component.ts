@@ -41,7 +41,7 @@ export class BadgeComponent {
       {
         'bg-white text-black border-white': this.checked,
         'border-zinc-800': !this.checked,
-        'cursor-pointer': !!this.clickEvent.length,
+        'cursor-pointer': this.clickEvent.observed,
       },
     ]);
   }

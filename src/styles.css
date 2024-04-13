@@ -14,3 +14,9 @@
     @apply bg-zinc-950;
   }
 }
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

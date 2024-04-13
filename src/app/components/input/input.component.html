@@ -1,14 +1,14 @@
-<div>
-  <div [ngClass]="inputGroupClasses">
+<div class="rounded-md border-2 border-zinc-800">
+  <div class="flex items-center rounded-md">
     @if (leadingAddOn) {
       <span
-        class="inline-flex items-center rounded-l-md border-2 border-r-0 border-zinc-800 bg-transparent px-3 text-white sm:text-sm"
+        class="inline-flex items-center bg-transparent px-3 text-white sm:text-sm"
         >{{ leadingAddOn }}</span
       >
+      <app-divider />
     }
     @if (leadingIcon || leadingInlineAddOn) {
-      <div
-        class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+      <div class="pointer-events-none flex items-center pl-3">
         @if (leadingIcon) {
           <app-icon icon="envelope" size="xl" />
         }
@@ -21,12 +21,10 @@
       type="text"
       name="company-website"
       id="company-website"
-      class="block w-full min-w-0 flex-1 border-2 border-zinc-800 bg-transparent px-3 py-2 text-white outline-none sm:text-sm"
-      placeholder="www.example.com"
-      [ngClass]="inputClasses" />
+      class="block w-full min-w-0 flex-1 bg-transparent px-3 py-2 text-white outline-none sm:text-sm"
+      placeholder="{{ placeholder }}" />
     @if (trailingIcon || trailingInlineAddOn) {
-      <div
-        class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+      <div class="pointer-events-none flex items-center pr-3">
         @if (trailingIcon) {
           <app-icon icon="envelope" size="xl" />
         }
@@ -38,8 +36,9 @@
       </div>
     }
     @if (trailingAddOn) {
+      <app-divider />
       <span
-        class="inline-flex items-center rounded-r-md border-2 border-l-0 border-zinc-800 bg-transparent px-3 text-white sm:text-sm"
+        class="inline-flex items-center bg-transparent px-3 text-white sm:text-sm"
         >{{ trailingAddOn }}</span
       >
     }

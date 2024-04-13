@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import {
   Component,
   EventEmitter,
+  HostBinding,
   Input,
   Output,
   booleanAttribute,
@@ -45,7 +46,7 @@ const ICON_PADDING_CLASSES = {
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [CommonModule, IconComponent],
+  imports: [CommonModule, IconComponent, DividerComponent],
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.css'],
 })
@@ -54,6 +55,7 @@ export class ButtonComponent {
   @Input() leadingIcon?: IconName;
   @Input() trailingIcon?: IconName;
   @Input() onlyIcon?: IconName;
+  @Input() divider?: 'left' | 'right';
   @Output() clickEvent = new EventEmitter<void>();
 
   @Input({ transform: booleanAttribute })
@@ -73,6 +75,8 @@ export class ButtonComponent {
     this._disabled = value;
   }
   private _disabled: boolean = false;
+
+  @HostBinding('class') classes = 'flex items-center';
 
   get buttonClasses(): string[] {
     let classes = BASE_CLASSES[this.size];
