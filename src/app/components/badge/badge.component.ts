@@ -40,7 +40,7 @@ export class BadgeComponent {
       SIZE_CLASSES[this.size],
       {
         'bg-white text-black border-white': this.checked,
-        'border-zinc-800': !this.checked,
+        'text-white border-zinc-800': !this.checked,
         'cursor-pointer': this.clickEvent.observed,
       },
     ]);

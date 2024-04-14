@@ -1,9 +1,6 @@
-<div class="grid grid-cols-1 gap-3 sm:grid-cols-6">
-  @for (data of sampleData; track data.id) {
-    <app-badge
-      [checked]="isChecked(data.label)"
-      (clickEvent)="handleCheck(data.label)"
-      >{{ data.label }}</app-badge
-    >
-  }
+<div>
+  <p class="mb-2 text-white">{{ label }}</p>
+  <div class="flex flex-wrap gap-x-3 gap-y-2">
+    <ng-content select="app-radio"></ng-content>
+  </div>
 </div>

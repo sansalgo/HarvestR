@@ -5,6 +5,9 @@ import { ButtonComponent } from './components/button/button.component';
 import { DisclosureComponent } from './components/disclosure/disclosure.component';
 import { InputComponent } from './components/input/input.component';
 import { AccordionModule } from './components/accordion/accordion.module';
+import { RadioGroupModule } from './components/radio-group/radio-group.module';
+import { CheckboxGroupComponent } from './components/checkbox-group/checkbox-group.component';
+import { CheckboxComponent } from './components/checkbox-group/checkbox/checkbox.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +19,9 @@ import { AccordionModule } from './components/accordion/accordion.module';
     DisclosureComponent,
     InputComponent,
     AccordionModule,
+    RadioGroupModule,
+    CheckboxGroupComponent,
+    CheckboxComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
