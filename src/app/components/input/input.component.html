@@ -1,10 +1,9 @@
 <div class="rounded-md border-2 border-zinc-800">
   <div class="flex items-center rounded-md">
     @if (leadingAddOn) {
-      <span
-        class="inline-flex items-center bg-transparent px-3 text-white sm:text-sm"
-        >{{ leadingAddOn }}</span
-      >
+      <span class="inline-flex items-center bg-transparent px-3 sm:text-sm">{{
+        leadingAddOn
+      }}</span>
       <app-divider />
     }
     @if (leadingIcon || leadingInlineAddOn) {
@@ -21,7 +20,7 @@
       type="text"
       name="company-website"
       id="company-website"
-      class="block w-full min-w-0 flex-1 bg-transparent px-3 py-2 text-white outline-none sm:text-sm"
+      class="block w-full min-w-0 flex-1 border-none bg-transparent px-3 py-2 focus:ring-0 sm:text-sm"
       placeholder="{{ placeholder }}" />
     @if (trailingIcon || trailingInlineAddOn) {
       <div class="pointer-events-none flex items-center pr-3">
@@ -37,10 +36,9 @@
     }
     @if (trailingAddOn) {
       <app-divider />
-      <span
-        class="inline-flex items-center bg-transparent px-3 text-white sm:text-sm"
-        >{{ trailingAddOn }}</span
-      >
+      <span class="inline-flex items-center bg-transparent px-3 sm:text-sm">{{
+        trailingAddOn
+      }}</span>
     }
   </div>
 </div>
