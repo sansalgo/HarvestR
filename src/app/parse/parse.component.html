@@ -1,0 +1,37 @@
+<app-accordion>
+  <app-accordion-item>
+    <app-accordion-header>
+      <app-input leadingAddOn="key"></app-input>
+    </app-accordion-header>
+    <app-accordion-body>
+      <app-input [value]="selector" leadingAddOn="value"></app-input>
+      <app-radio-group label="Types" (valueChange)="log($event)">
+        @for (item of data.types; track $index) {
+          <app-radio value="{{ item }}">{{ item }}</app-radio>
+        }
+      </app-radio-group>
+      <app-radio-group label="Combinators">
+        @for (item of data.combinators; track $index) {
+          <app-radio value="{{ item }}">{{ item }}</app-radio>
+        }
+      </app-radio-group>
+      @if (data.ids.length) {
+        <app-radio-group label="Ids">
+          @for (item of data.ids; track $index) {
+            <app-radio value="{{ item }}">{{ item }}</app-radio>
+          }
+        </app-radio-group>
+      }
+      @if (data.classes.length) {
+        <app-checkbox-group label="Classes">
+          @for (item of data.classes; track $index) {
+            <app-checkbox value="{{ item }}">{{ item }}</app-checkbox>
+          }
+        </app-checkbox-group>
+      }
+      <app-code>
+        {{ data.preview }}
+      </app-code>
+    </app-accordion-body>
+  </app-accordion-item>
+</app-accordion>

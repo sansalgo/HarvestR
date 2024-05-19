@@ -3,13 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { ButtonGroupComponent } from './components/button-group/button-group.component';
 import { ButtonComponent } from './components/button/button.component';
 import { DisclosureComponent } from './components/disclosure/disclosure.component';
-import { InputComponent } from './components/input/input.component';
-import { AccordionModule } from './components/accordion/accordion.module';
-import { RadioGroupModule } from './components/radio-group/radio-group.module';
-import { CheckboxGroupComponent } from './components/checkbox-group/checkbox-group.component';
-import { CheckboxComponent } from './components/checkbox-group/checkbox/checkbox.component';
-import { CodeComponent } from './components/code/code.component';
-import { TextareaComponent } from './components/textarea/textarea.component';
 
 @Component({
   selector: 'app-root',
@@ -19,13 +12,6 @@ import { TextareaComponent } from './components/textarea/textarea.component';
     ButtonComponent,
     ButtonGroupComponent,
     DisclosureComponent,
-    InputComponent,
-    AccordionModule,
-    RadioGroupModule,
-    CheckboxGroupComponent,
-    CheckboxComponent,
-    CodeComponent,
-    TextareaComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -36,4 +22,6 @@ export class AppComponent {
   handleButtonClick(): void {
     alert('Button clicked!');
   }
+
+  constructor() {}
 }

@@ -8,10 +8,9 @@ describe('AccordionItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AccordionItemComponent]
-    })
-    .compileComponents();
-    
+      imports: [AccordionItemComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AccordionItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

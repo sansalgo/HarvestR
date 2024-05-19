@@ -6,6 +6,8 @@ import { BadgePageComponent } from './badge-page/badge-page.component';
 import { CheckboxPageComponent } from './checkbox-page/checkbox-page.component';
 import { CodePageComponent } from './code-page/code-page.component';
 import { AccordionPageComponent } from './accordion-page/accordion-page.component';
+import { ParseComponent } from './parse/parse.component';
+import { HtmlInputComponent } from './html-input/html-input.component';
 
 export const routes: Routes = [
   {
@@ -35,5 +37,13 @@ export const routes: Routes = [
   {
     path: 'accordion-page',
     component: AccordionPageComponent,
+  },
+  {
+    path: '',
+    component: HtmlInputComponent,
+  },
+  {
+    path: 'parse',
+    component: ParseComponent,
   },
 ];

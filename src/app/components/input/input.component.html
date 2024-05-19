@@ -21,7 +21,8 @@
       name="company-website"
       id="company-website"
       class="block w-full min-w-0 flex-1 border-none bg-transparent px-3 py-2 focus:ring-0 sm:text-sm"
-      placeholder="{{ placeholder }}" />
+      placeholder="{{ placeholder }}"
+      [value]="value" />
     @if (trailingIcon || trailingInlineAddOn) {
       <div class="pointer-events-none flex items-center pr-3">
         @if (trailingIcon) {

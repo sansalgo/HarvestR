@@ -1,4 +1,11 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
@@ -13,10 +20,16 @@ export class TextareaComponent {
   textareaRef!: ElementRef<HTMLTextAreaElement>;
 
   @Input() placeholder: string = '';
+  @Input() value: string = '';
+  @Output() valueChange = new EventEmitter<string>();
 
-  updateTextareaHeight() {
+  handleOnChange(event: Event) {
     const textarea = this.textareaRef.nativeElement;
     textarea.style.height = 'auto';
     textarea.style.height = textarea.scrollHeight + 'px';
+
+    const value = (event.target as HTMLTextAreaElement).value;
+    this.value = value;
+    this.valueChange.emit(value);
   }
 }

@@ -22,4 +22,6 @@ export class InputComponent {
   // TODO: add trailingButton
   @Input() trailingButton?: string;
   @Input() placeholder: string = '';
+
+  @Input() value: string = '';
 }

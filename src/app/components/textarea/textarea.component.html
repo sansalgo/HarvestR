@@ -9,8 +9,9 @@
         class="no-scrollbar m-auto block w-full resize-none border-0 bg-transparent focus:ring-0 sm:text-sm"
         placeholder="{{ placeholder }}"
         #textareaRef
-        (input)="updateTextareaHeight()"></textarea>
-      <app-button onlyIcon="arrow-right" outlined></app-button>
+        [value]="value"
+        (input)="handleOnChange($event)"></textarea>
+      <ng-content select="[trailingButton]"></ng-content>
     </div>
   </div>
 </div>

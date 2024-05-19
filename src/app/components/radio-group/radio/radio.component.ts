@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RadioService } from './radio.service';
+import { RadioGroupComponent } from '../radio-group.component';
 
 @Component({
   selector: 'app-radio',
@@ -9,13 +9,13 @@ import { RadioService } from './radio.service';
 export class RadioComponent {
   @Input() value: string = '';
 
-  constructor(private radioService: RadioService) {}
+  constructor(private radioGroup: RadioGroupComponent) {}
 
   get isChecked(): boolean {
-    return this.value === this.radioService.getCheckedValue;
+    return this.value === this.radioGroup.getCheckedValue;
   }
 
   handleCheck() {
-    this.radioService.setCheckedValue = this.value;
+    this.radioGroup.setCheckedValue = this.value;
   }
 }

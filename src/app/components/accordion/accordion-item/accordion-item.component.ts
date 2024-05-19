@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './accordion-item.component.css',
 })
 export class AccordionItemComponent {
-  expandedIndex: number = NaN;
+  expandedIndex: number = 1;
 
   toggle(index: number): void {
     this.expandedIndex = this.expandedIndex === index ? NaN : index;
